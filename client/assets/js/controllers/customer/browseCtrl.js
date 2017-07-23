@@ -54,7 +54,8 @@ var browseCtrl = function ($scope, $state, $location, $stateParams, uiGmapGoogle
     );
     mealOfferService
         .getMealOffers({
-            offer_date: moment().add(1, 'd').format('YYYY-MM-DDT00:00:00.000[Z]')
+            offer_date: moment().add(1, 'd').format('YYYY-MM-DDT00:00:00.000[Z]'),
+            offer_status: 'active'
         })
         .success(function (data, status, headers, config) {
             $scope.offers = data;
