@@ -3,6 +3,7 @@ var app = angular.module('lunchSociety');
 var menuCtrl = function ($scope, $location, $window, utilService, modalService, commonService, orderService) {
 
     const customer = commonService.getCustomerID()
+
     if ($window.sessionStorage.feedbackID) {
       $location.path(`create-feedback/${$window.sessionStorage.feedbackID}`)
     }
@@ -91,7 +92,7 @@ var menuCtrl = function ($scope, $location, $window, utilService, modalService, 
       "status", {}
     )
     orderService
-      .getOrders({ order_date: moment().format('YYYY-MM-DD'), status: 'active' })
+      .getOrders({ order_date: moment().format('YYYY-MM-DD'), status: 'active', customer_id: customer })
       .success((data, status, headers, config) => {
         if (data.length > 0) {
           modalService.resolve()
