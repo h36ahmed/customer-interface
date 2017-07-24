@@ -108,7 +108,7 @@ var browseCtrl = function ($scope, $state, $location, $stateParams, uiGmapGoogle
         promise.then(
             function handleResolve(response) {
                 var order = {
-                    order_date: utilService.formatDate(new Date()),
+                    order_date: moment().format('YYYY-MM-DD'),
                     offer_id: offer.id,
                     pickup_time_id: response.id,
                     customer_id: $scope.customer_id,
