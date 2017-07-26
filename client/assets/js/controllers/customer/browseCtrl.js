@@ -107,8 +107,13 @@ var browseCtrl = function ($scope, $state, $location, $stateParams, uiGmapGoogle
         );
         promise.then(
             function handleResolve(response) {
+                const currentHour = moment().hour()
+                const now = moment().format('YYYY-MM-DD')
+                const tomorrow = moment().add(1, 'd').format('YYYY-MM-DD')
+                const orderDate = currentHour >= 9 && currentHour <= 17 ? now : tomorrow
+
                 var order = {
-                    order_date: moment().format('YYYY-MM-DD'),
+                    order_date: orderDate,
                     offer_id: offer.id,
                     pickup_time_id: response.id,
                     customer_id: $scope.customer_id,
