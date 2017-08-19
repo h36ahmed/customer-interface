@@ -94,7 +94,7 @@ app.factory(
       // const hour = moment(1495062343414).hour() // this is for dev purpose to keep kitchen open
       const hour = moment().hour() // this is the current hour
       console.log('hour', hour)
-      if (hour > 9 && hour < 17) {
+      if (hour >= 9 && hour =< 17) {
         return false
       }
 
