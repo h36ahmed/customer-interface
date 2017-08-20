@@ -236,7 +236,7 @@ gulp.task('server', ['build'], function() {
   $.connect.server({
     root: ['./build'],
     port: process.env.PORT || 5000,
-    livereload: false
+    livereload: false,
     https: true
   });
   if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === undefined ? true : false) {
