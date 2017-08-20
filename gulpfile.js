@@ -237,7 +237,7 @@ gulp.task('server', ['build'], function() {
     root: ['./build'],
     port: process.env.PORT || 5000,
     livereload: false,
-    https: process.env.NODE_ENV === undefined ?  false : true
+    https: true
   });
   if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === undefined ? true : false) {
     open('http://localhost:5000');
