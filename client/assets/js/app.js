@@ -12,7 +12,6 @@
       'foundation.dynamicRouting.animations',
 
       'underscore',
-      'jquery',
       'ngFileUpload',
       'uiGmapgoogle-maps',
       '720kb.datepicker',
