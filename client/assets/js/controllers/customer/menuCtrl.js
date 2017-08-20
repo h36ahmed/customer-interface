@@ -20,7 +20,7 @@ var menuCtrl = function ($scope, $location, $window, utilService, modalService, 
               function handleResolve(response) {
                 promise = modalService.open(
                   'alert', {
-                    message: 'You can only have 1 order. Please cancel your current order or wait until tomorrow to order another item'
+                    message: 'Awww yeah, you’ve already chosen today’s lunch. To get access to the meal selections just cancel your current order to select a new one!'
                   }
                 )
                 promise.then(
